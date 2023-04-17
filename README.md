@@ -6,7 +6,7 @@
 
 `1ro Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Plataforma de gerenciamento de informações médicas, projetada para simplificar o acompanhamento e compartilhamento de históricos médicos, consultas, medicamentos e exames. Ele oferece uma solução segura e fácil de usar que ajuda pacientes e cuidadores a manterem-se organizados e informados, melhorando a comunicação com profissionais de saúde e farmácias.
 
 ## Integrantes
 
