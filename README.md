@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# Aplicação Web Front-End MedOrganizer
 
-`CURSO`
+`Curso: Tecnologia em Análise e Desenv. de Sistemas - EAD - UNID. EDUC. PUC MINAS VIRTUAL - PUV`
 
-`DISCIPLINA`
+`ADS`
 
-`SEMESTRE`
+`1ro Semestre`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Evandro Kumasaka
+* Pedro Bonfim
+* Wagner Martins
+* Victor Araújo
+* Leonardo Melgaço
+* Lucas Melo
 
 ## Orientador
 
-* Nome completo do professor 1
+* Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
