@@ -62,29 +62,12 @@
         <!---------------- END OF ASIDE ---------------->
         <main>
             <h1>Dashboard</h1>
-            <!-- <div class="date">
-                <input type="date">
-            </div> -->
-            
             
             <div class="recent-orders">
                 <h2>Agenda</h2>
               
-                <!-- <a href="#">Show All</a> -->
+                <div id='calendar'></div>
             </div>
-            
-            <!-- <div>
-                <canvas id="myChart"></canvas>
-            </div>
-            <div>
-                <span class="pie">1/5</span>
-                <span class="pie">226/360</span>
-                <span class="pie">0.52/1.561</span>
-                <span class="pie">1,4</span>
-                <span class="pie">226,134</span>
-                <span class="pie">0.52,1.041</span>
-                <span class="pie">1,2,3,2,2</span>
-            </div> -->
 
         </main>
         <!---------------- END OF MAIN ---------------->
@@ -150,6 +133,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
   <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
   <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.setOption('locale', 'pt');
+        calendar.render();
+      });
+  </script>
 </body>
 </html>
