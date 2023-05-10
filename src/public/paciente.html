@@ -68,75 +68,64 @@
               
               <!--DADOS PESSOAIS-->
               <fieldset id="dadosp">
-                 <form method="post">
-                    
-                    <legend><b>Dados Pessoais</b></legend>
-                                 <!--NOME-->
- 
-                              <div class="form-group">
-                              <h2 for="nomeCompleto">Nome Completo:</h2>
-                             <input type="text" name="nomeCompleto"required placeholder="Example Example Example"><br>
-                             </div>
-                                     <!--IDENTIDADE-->
- 
-                                 <div class="form-group">
-                                 <h2 for="RG">Identidade: </h2>
-                                 <input type="number"size = "8" maxlenght="8" placeholder="00000000"required><br>
-                                 </div>
-                                         <!--CPF-->
-                                         
-                                     <div class="form-group">
-                                     <h2 for="CPF">CPF: </h2>  
-                                     <input type="number"name="CPF" size="11" maxlength="11" placeholder="000000000-00 "required><br>
-                                     </div>
-                                              <!--DATA DE NASCIMENTO-->
- 
-                                         <div class="form-group">
-                                         <h2 for="dataNascimento">Data de nascimento:</h2> 
-                                         <input type="date" name="dataNascimento" placeholder="dd/mm/aaaa" required>
-                                         </div>
-                                                 <!--GENERO-->
- 
-                                                 <div class="form-group">
-                                                 <h2 for="genero">Gênero: </h2>
-                                                 <input type="radio" name="generoM" value="Masculino"> Masculino
-                                                 <input type="radio" name="generoF" value="Feminino"> Feminino
-                                                 </div>
- 
-                                                     <!--EMAIL-->
- 
-                                                   <div class="form-group">
-                                                     <h2 for="email">E-mail: </h2>
-                                                     <input type="email" placeholder="nnnn@example.com" required>
-                                                   </div>
-                                                       <!--ENDEREÇO-->
- 
-                                                       <div class="form-group">
-                                                         <h2 for="endereço">Endereço:<br></h2>
-                                                         <label for="rua">Logradouro: </label>
-                                                         <input type="text" name="rua"><br>
-                                                         <label for="numero">Número: </label>
-                                                         <input type="number" name="numero"maxlength="5"><br>
-                                                         <label for="CEP">CEP: </label>
-                                                         <input type="number" name="CEP"minlength="8"maxlength="8" placeholder="000000-00"><br>
-                                                         <label for="Cidade">Cidade: </label>
-                                                         <input type="text" name="Cidade"><br>
-                                                         <label for="estado">Estado:</label>
-                                                         <input type="text" name="Estado"><br>
-                                                         <label for="bairro">Bairro: </label>
-                                                         <input type="text" name="Bairro">
-                                                         </div>
-                          <!--BUTTON-->
-                        
-                          <div class="form-group">
-                            <input name = botao1 class ="btn btn-primary" type="submit" value="Concluir" required>
-                          </div>
-                          <div class="form-group">
-                            <input name="botao2" class="btn btn-primary"type="reset" value="Cancelar" required>
-                          </div>
-                 </form>
-              </fieldset>              
-                
+                <form method="post">
+                   <legend><b>Dados Pessoais</b></legend>
+                   <!--NOME-->
+                   <div class="form-group">
+                      <h2 for="nomeCompleto">Nome Completo:</h2>
+                      <input type="text" name="nomeCompleto"required placeholder="Example Example Example"><br>
+                   </div>
+                   <!--IDENTIDADE-->
+                   <div class="form-group">
+                      <h2 for="RG">Identidade: </h2>
+                      <input type="number"size = "8" maxlenght="8" placeholder="00000000"required><br>
+                   </div>
+                   <!--CPF-->
+                   <div class="form-group">
+                      <h2 for="CPF">CPF: </h2>
+                      <input type="number"name="CPF" size="11" maxlength="11" placeholder="000000000-00 "required><br>
+                   </div>
+                   <!--DATA DE NASCIMENTO-->
+                   <div class="form-group">
+                      <h2 for="dataNascimento">Data de nascimento:</h2>
+                      <input type="date" name="dataNascimento" placeholder="dd/mm/aaaa" required>
+                   </div>
+                   <!--GENERO-->
+                   <div class="form-group">
+                      <h2 for="genero">Gênero: </h2>
+                      <input type="radio" name="generoM" value="Masculino"> Masculino
+                      <input type="radio" name="generoF" value="Feminino"> Feminino
+                   </div>
+                   <!--EMAIL-->
+                   <div class="form-group">
+                      <h2 for="email">E-mail: </h2>
+                      <input type="email" placeholder="nnnn@example.com" required>
+                   </div>
+                   <!--ENDEREÇO-->
+                   <div class="form-group">
+                      <h2 for="endereço">Endereço:<br></h2>
+                      <label for="rua">Logradouro: </label>
+                      <input type="text" name="rua"><br>
+                      <label for="numero">Número: </label>
+                      <input type="number" name="numero"maxlength="5"><br>
+                      <label for="CEP">CEP: </label>
+                      <input type="number" name="CEP"minlength="8"maxlength="8" placeholder="000000-00"><br>
+                      <label for="Cidade">Cidade: </label>
+                      <input type="text" name="Cidade"><br>
+                      <label for="estado">Estado:</label>
+                      <input type="text" name="Estado"><br>
+                      <label for="bairro">Bairro: </label>
+                      <input type="text" name="Bairro">
+                   </div>
+                   <!--BUTTON-->
+                   <div class="form-group">
+                      <input name = botao1 class ="btn btn-primary" type="submit" value="Concluir" required>
+                   </div>
+                   <div class="form-group">
+                      <input name="botao2" class="btn btn-primary"type="reset" value="Cancelar" required>
+                   </div>
+                </form>
+             </fieldset>
             </div>
             
         </main>
