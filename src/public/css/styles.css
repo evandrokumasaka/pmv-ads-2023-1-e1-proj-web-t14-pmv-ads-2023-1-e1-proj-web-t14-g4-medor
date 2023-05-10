@@ -479,7 +479,7 @@ main .recent-orders a {
 
 /* ============= RECENT UPDATES ============= */
 .right .recent-updates {
-    margin-top: 1rem;
+    margin-top: rem;
 }
 
 .right .recent-updates h2 {
@@ -512,6 +512,7 @@ main .recent-orders a {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
 
 /* ============= SALES ANALYTICS ============= */
 .right .sales-analytics {
@@ -896,4 +897,22 @@ canvas#chart {
     .right .top button span{
         font-size: 2rem;
     }
+}
+
+/*===============CADASTRO===============*/
+.recent-orders ,.h2{
+    text-align: justify;
+    font-size: 1.5rem;
+
+}
+.form-group{
+    display: block;
+    width: 100%;
+    border: 0.0625rem solid #d1d5db;
+    border-radius: var(--border-radius-2);
+    outline: none;
+    padding: 1.2rem;
+    background: var(--color-white);
+    margin-top: 1rem;
+    font-size: 1rem;
 }
