@@ -64,53 +64,58 @@
             <h1>Medicamentos</h1>
             
             <div class="recent-orders">
-              <h2>Novo Medicamento</h2>
+              <!-- <h2>Novo Medicamento</h2> -->
               
               <!-- begin::form -->
-              <form method="post">
+              <!-- <form method="post" action"#"> -->
+                 <input type="hidden" id="medicamentoId" name="id">
                  <!--nome-->
                  <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" required placeholder=""><br>
+                    <label for="medicamentoNome">Nome:</label>
+                    <input type="text" id="medicamentoNome" name="nome" required placeholder="(Obrigatório)"><br>
+                 </div>
+                <!--fabricante-->
+                 <div class="form-group">
+                    <label for="medicamentoFabricante">fabricante:</label>
+                    <input type="text" id="medicamentoFabricante" name="fabricante" placeholder=""><br>
                  </div>
                  <!-- principioAtivo -->
                  <div class="form-group">
-                    <label for="nome">Principio Ativo:</label>
-                    <input type="text" name="principioAtivo" required placeholder=""><br>
+                    <label for="medicamentoPrincipioAtivo">Principio Ativo:</label>
+                    <input type="text" id="medicamentoPrincipioAtivo" name="principioAtivo" placeholder=""><br>
                  </div>
                  <!-- formaFarmaceutica -->
                  <div class="form-group">
-                    <label for="nome">Forma Farmaceutica:</label>
-                    <input type="text" name="formaFarmaceutica" required placeholder=""><br>
-                 </div>                   
+                    <label for="medicamentoFormaFarmaceutica">Forma Farmaceutica:</label>
+                    <input type="text" id="medicamentoFormaFarmaceutica" name="formaFarmaceutica" placeholder=""><br>
+                 </div>
+                 <!-- foefeitosColaterais -->
+                 <div class="form-group">
+                    <label for="medicamentoEfeitosColaterais">Efeitos Colaterais:</label>
+                    <input type="text" id="medicamentoEfeitosColaterais" name="efeitosColaterais" placeholder=""><br>
+                 </div>
                  <!-- actions -->
                  <div>
-                    <input name="salvar" class ="btn" type="submit" value="Salvar" required>
+                    <!-- <input id="btnSalvarMedicamento" class ="btn" type="submit" value="Salvar"> -->
+                    <button id="btnSalvarMedicamento" class ="btn">Salvar</button>
                  </div>
-              </form><!-- end::form -->
+              <!-- </form>-->
+              <!-- end::form --> 
+              
               <div style="margin-top: 10px;">
-                <table>
+                <table id="tabelaMedicamentos">
                   <thead>
                       <tr>
+                          <th>ID</th>
                           <th>Nome</th>
+                          <th>Fabricante</th>
                           <th>Principio Ativo</th>
-                          <th>Forma Farmaceutica</th>
+                          <th>Forma</th>
+                          <th>Efeitos</th>
                           <th>Ações</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <td><a href="#">Lacrifilm</a></td>
-                          <td>Camelose Sódica</td>
-                          <td>Solução Oftalmica</td>
-                          <td>
-                            <div class="action-container">
-                              <a href="#" class="action-link"><span class="material-symbols-rounded">Edit</span></a>
-                              <!-- <a href="#" class="action-link"><span class="material-symbols-rounded">Delete</span></a> -->
-                            </div>
-                          </td>
-                      </tr>
-                  </tbody>
+                  <tbody></tbody>
                 </table>
               </div>
               
