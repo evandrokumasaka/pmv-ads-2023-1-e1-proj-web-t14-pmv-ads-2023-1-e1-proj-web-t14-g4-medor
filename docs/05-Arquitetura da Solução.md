@@ -26,10 +26,41 @@ Diagrama que permite a modelagem física de um sistema, através da visão dos s
 
 Exemplo: 
 
-Os componentes que fazem parte da solução são apresentados na Figura XX.
+Os componentes que fazem parte da solução são apresentados no Diagrama 01
 
-![Diagrama de Componentes](img/componentes.png)
-<center>Figura XX - Arquitetura da Solução</center>
+```mermaid
+graph LR
+
+UI --> Logic
+Logic --> Dexie
+
+Dexie --> IndexedDB
+
+subgraph "Hospedagem"
+    Server["Servidor"]
+end
+
+subgraph "Internet"
+    Web["Web"]
+end
+
+Internet --> MedOrganizer-App
+Hospedagem --> Internet
+
+subgraph "Navegador"
+	subgraph "MedOrganizer-App"
+    UI["Interface do Usuário (HTML, CSS, JavaScript)"]
+    Logic["Lógica da Aplicação (JavaScript)"]
+    Dexie["Dexie.js (IndexedDB)"]
+	end
+	subgraph "Dexie.js"
+    IndexedDB["IndexedDB (Navegador)"]
+	end
+end
+
+```
+
+<center>Diagrama 01 - Arquitetura da Solução</center>
 
 A solução implementada conta com os seguintes módulos:
 - **Navegador** - Interface básica do sistema  
