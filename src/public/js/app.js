@@ -3,7 +3,8 @@ var db = new Dexie("MedOrganizer");
 
 // Definir o esquema das tabelas
 db.version(1).stores({
-  medicamentos: "++id, nome, fabricante, principioAtivo, formaFarmaceutica, efeitosColaterais"
+  medicamentos: "++id, nome, fabricante, principioAtivo, formaFarmaceutica, efeitosColaterais",
+  Farmacias: "++id, nome, contato, telefone, chavePix"
 });
 
 function Medicamento(nome, fabricante, principioAtivo, formaFarmaceutica, efeitosColaterais) {
@@ -12,6 +13,13 @@ function Medicamento(nome, fabricante, principioAtivo, formaFarmaceutica, efeito
   this.principioAtivo = principioAtivo;
   this.formaFarmaceutica = formaFarmaceutica
   this.efeitosColaterais = efeitosColaterais
+}
+
+function Farmacias(nome, contato, telefone, chavePix) {
+  this.nome = nome;
+  this.contato = contato;
+  this.telefone = telefone;
+  this.chavePix = chavePix
 }
 
 // Adicionar um medicamento
@@ -23,6 +31,9 @@ function atualizarMedicamento(id, novoNome, novoFabricante, novoPrincipioAtivo, 
   db.medicamentos.update(id, { nome: novoNome, fabricante: novoFabricante, principioAtivo: novoPrincipioAtivo, formaFarmaceutica: novaFormaFarmaceutica, efeitosColaterais: novoEfeitosColaterais });
 }
 
+function atualizarFarmacia(id, novoNome, novoContato, novoTelefone, novaChavePix) {
+  db.medicamentos.update(id, { nome: novoNome, contato: novoContato, telefone: novoTelefone, chavePix: novaChavePix });
+}
 // Deletar um registro
 function deletarMedicamento(id) {
   db.medicamentos.delete(id);
