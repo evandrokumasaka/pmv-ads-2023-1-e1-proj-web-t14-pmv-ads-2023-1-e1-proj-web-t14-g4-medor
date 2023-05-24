@@ -44,9 +44,14 @@
                     <h3>Médicos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
-                <a href="./medicamento.html" class="active">
+                <a href="./medicamento.html" >
                     <span class="material-symbols-rounded">vaccines</span>
                     <h3>Medicamentos</h3>
+                    <!-- <span class="message-count">1</span> -->
+                </a>
+                <a href="./farmacia.html" class="active">
+                    <span class="material-symbols-rounded">vaccines</span>
+                    <h3>Farmácias</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
                 <!-- <a href="#">
@@ -61,57 +66,51 @@
         </aside>
         <!---------------- END OF ASIDE ---------------->
         <main>
-            <h1>Medicamentos</h1>
+            <h1>Farmácias</h1>
             
             <div class="recent-orders">
               <!-- <h2>Novo Medicamento</h2> -->
               
               <!-- begin::form -->
               <!-- <form method="post" action"#"> -->
-                 <input type="hidden" id="medicamentoId" name="id">
+                 <input type="hidden" id="farmaciaId" name="id">
                  <!--nome-->
                  <div class="form-group">
-                    <label for="medicamentoNome">Nome:</label>
-                    <input type="text" id="medicamentoNome" name="nome" required placeholder="(Obrigatório)"><br>
+                    <label for="farmaciaNome">Nome:</label>
+                    <input type="text" id="farmaciaNome" name="nome" required placeholder="(Obrigatório)"><br>
                  </div>
                 <!--fabricante-->
                  <div class="form-group">
-                    <label for="medicamentoFabricante">fabricante:</label>
-                    <input type="text" id="medicamentoFabricante" name="fabricante" placeholder=""><br>
+                    <label for="farmaciaContato">Contato:</label>
+                    <input type="text" id="farmaciaContato" name="contato" placeholder=""><br>
                  </div>
-                 <!-- principioAtivo -->
+                 <!-- telefone -->
                  <div class="form-group">
-                    <label for="medicamentoPrincipioAtivo">Principio Ativo:</label>
-                    <input type="text" id="medicamentoPrincipioAtivo" name="principioAtivo" placeholder=""><br>
+                    <label for="farmaciaTelefone">Telefone:</label>
+                    <input type="text" id="farmaciaTelefone" name="telefone" placeholder=""><br>
                  </div>
-                 <!-- formaFarmaceutica -->
+                 <!-- chave-pix -->
                  <div class="form-group">
-                    <label for="medicamentoFormaFarmaceutica">Forma Farmaceutica:</label>
-                    <input type="text" id="medicamentoFormaFarmaceutica" name="formaFarmaceutica" placeholder=""><br>
-                 </div>
-                 <!-- foefeitosColaterais -->
-                 <div class="form-group">
-                    <label for="medicamentoEfeitosColaterais">Efeitos Colaterais:</label>
-                    <input type="text" id="medicamentoEfeitosColaterais" name="efeitosColaterais" placeholder=""><br>
+                    <label for="farmaciaChavePix">Chave PIX:</label>
+                    <input type="text" id="farmaciaChavePix" name="chavePix" placeholder=""><br>
                  </div>
                  <!-- actions -->
                  <div>
-                    <!-- <input id="btnSalvarMedicamento" class ="btn" type="submit" value="Salvar"> -->
-                    <button id="btnSalvarMedicamento" class ="btn">Salvar</button>
+                    <!-- <input id="btnSalvarfarmacia" class ="btn" type="submit" value="Salvar"> -->
+                    <button id="btnSalvarFarmacia" class ="btn">Salvar</button>
                  </div>
               <!-- </form>-->
               <!-- end::form --> 
               
               <div style="margin-top: 10px;">
-                <table id="tabelaMedicamentos">
+                <table id="tabelaFarmacia">
                   <thead>
                       <tr>
                           <th>ID</th>
                           <th>Nome</th>
-                          <th>Fabricante</th>
-                          <th>Principio Ativo</th>
-                          <th>Forma</th>
-                          <th>Efeitos</th>
+                          <th>Contato</th>
+                          <th>Telefone</th>
+                          <th>Chave PIX</th>
                           <th>Ações</th>
                       </tr>
                   </thead>
