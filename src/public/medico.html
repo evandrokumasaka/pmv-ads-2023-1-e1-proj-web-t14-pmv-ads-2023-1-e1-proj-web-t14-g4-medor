@@ -68,54 +68,57 @@
               
               <!-- begin::form -->
               <!-- <form method="post" action"#"> -->
-                 <input type="hidden" id="medicamentoId" name="id">
+                 <input type="hidden" id="medicoId" name="id">
                  <!--nome-->
                  <div class="form-group">
                     <label for="medicoNome">Nome:</label>
-                    <input type="text" id="medicamentoNome" name="nome" required placeholder="(Obrigatório)"><br>
+                    <input type="text" id="medico"><br>
                  </div>
                 <!--Especialidade-->
                  <div class="form-group">
-                    <label for="medicoEspecialidade">Especialidade:</label>
-                    <input type="text" id="medicoEspecialidade" name="especialidade" placeholder=""><br>
+                  <label for="medicoEspecialidade">Especialidade:</label>
+                  <input type="text" id="especialidade"><br>
                  </div>
-                 <!-- principioAtivo -->
+                 <!-- Telefone -->
                  <div class="form-group">
-                    <label for="medicamentoPrincipioAtivo">Principio Ativo:</label>
-                    <input type="text" id="medicamentoPrincipioAtivo" name="principioAtivo" placeholder=""><br>
+                    <label for="medicoTelefone">Telefone:</label>
+                    <input type="number" id="telefone"><br>
                  </div>
-                 <!-- formaFarmaceutica -->
+                 <!-- Endereço -->
                  <div class="form-group">
-                    <label for="medicamentoFormaFarmaceutica">Forma Farmaceutica:</label>
-                    <input type="text" id="medicamentoFormaFarmaceutica" name="formaFarmaceutica" placeholder=""><br>
+                    <label for="medicoEndereço">Endereço:</label>
+                    <input type="text" id="endereço"><br>
                  </div>
-                 <!-- foefeitosColaterais -->
+                 <!-- Valor -->
                  <div class="form-group">
-                    <label for="medicamentoEfeitosColaterais">Efeitos Colaterais:</label>
-                    <input type="text" id="medicamentoEfeitosColaterais" name="efeitosColaterais" placeholder=""><br>
+                    <label for="medicoValor">Valor:</label>
+                    <input type="number" id="valor"><br>
                  </div>
                  <!-- actions -->
                  <div>
-                    <!-- <input id="btnSalvarMedicamento" class ="btn" type="submit" value="Salvar"> -->
-                    <button id="btnSalvarMedicamento" class ="btn">Salvar</button>
+                    <!-- <input id="btnSalvarMedico" class ="btn" type="submit" value="Salvar"> -->
+                    <button onclick="medico.salvar()"id="btn1">Salvar</button>
+                    <button onclick="medico.cancelar()">Cancelar</button>
                  </div>
               <!-- </form>-->
               <!-- end::form --> 
               
               <div style="margin-top: 10px;">
-                <table id="tabelaMedicamentos">
+                <table id="tabelaMedicos">
                   <thead>
                       <tr>
-                          <th>ID</th>
+                          <th class="center">ID</th>
                           <th>Nome</th>
                           <th>Especialidade</th>
                           <th>Telefone</th>
                           <th>Endereço</th>
                           <th>Valor</th>
-                          <th>Ações</th>
+                          <th class="center">Ações</th>
                       </tr>
                   </thead>
-                  <tbody></tbody>
+                  <tbody id="tbody">
+                    
+                  </tbody>
                 </table>
               </div>
               
@@ -145,42 +148,16 @@
             <!-- END OF TOP -->
             <div class="recent-updates">
                 <h2>Notificações</h2>
-                <div class="updates">
-                    <div class="update">
-                        <div class="profile-photo">
-                            <span class="material-symbols-rounded">vaccines</span>
-                        </div>
-                        <div class="message">
-                            <p><b>Paracetamol</b> 1gr as 18:30</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="update">
-                        <div class="profile-photo">
-                            <span class="material-symbols-rounded">vaccines</span>
-                        </div>
-                        <div class="message">
-                            <p><b>Paracetamol</b> 1gr as 18:30</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="update">
-                        <div class="profile-photo">
-                            <span class="material-symbols-rounded">vaccines</span>
-                        </div>
-                        <div class="message">
-                            <p><b>Paracetamol</b> 1gr as 18:30</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <a href="#">Show All</a>
-                </div>
                 
             </div>
           
         </div>
     </div>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
