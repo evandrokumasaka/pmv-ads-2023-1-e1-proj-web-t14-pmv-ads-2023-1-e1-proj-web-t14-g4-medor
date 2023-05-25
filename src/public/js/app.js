@@ -4,7 +4,7 @@ var db = new Dexie("MedOrganizer");
 // Definir o esquema das tabelas
 db.version(1).stores({
   medicamentos: "++id, nome, fabricante, principioAtivo, formaFarmaceutica, efeitosColaterais",
-  Farmacias: "++id, nome, contato, telefone, chavePix"
+  farmacias: "++id, nome, contato, telefone, chavePix"
 });
 
 function Medicamento(nome, fabricante, principioAtivo, formaFarmaceutica, efeitosColaterais) {
@@ -34,9 +34,14 @@ function atualizarMedicamento(id, novoNome, novoFabricante, novoPrincipioAtivo, 
 function atualizarFarmacia(id, novoNome, novoContato, novoTelefone, novaChavePix) {
   db.medicamentos.update(id, { nome: novoNome, contato: novoContato, telefone: novoTelefone, chavePix: novaChavePix });
 }
+
 // Deletar um registro
 function deletarMedicamento(id) {
   db.medicamentos.delete(id);
+}
+
+function deletarFarmacia(id) {
+  db.farmacias.delete(id);
 }
 
 // Funções para a interface do usuário
@@ -90,6 +95,52 @@ function atualizarTabelaMedicamentos() {
   });
 }
 
+function atualizarTabelaFarmacias() {
+  var tbody = document.getElementById('tabelaFarmacias').getElementsByTagName('tbody')[0];
+  tbody.innerHTML = '';
+
+  db.farmacias.toArray().then(function(farmacias) {
+    farmacias.forEach(function(farmacia) {
+      var row = tbody.insertRow();
+
+      var cellId = row.insertCell(0);
+      var cellNome = row.insertCell(1);
+      var cellContato = row.insertCell(2);
+      var cellTelefone = row.insertCell(3);
+      var cellChavePix = row.insertCell(4);
+      var cellAcoes = row.insertCell(5);
+
+      cellId.textContent = farmacia.id;
+      cellNome.textContent = farmacia.nome;
+      cellContato.textContent = farmacia.contato;
+      cellTelefone.textContent = farmacia.telefone;
+      cellChavePix.textContent = farmacia.chavePix;
+
+      var btnEditar = document.createElement('button');
+      btnEditar.textContent = 'Editar';
+      btnEditar.classList.add('btn'); // Adiciona a classe 'btn'
+      btnEditar.onclick = function () {
+          document.getElementById('farmaciaId').value = farmacia.id;
+          document.getElementById('farmaciaNome').value = farmacia.nome;
+          document.getElementById('farmaciaContato').value = farmacia.contato;
+          document.getElementById('farmaciaTelefone').value = farmacia.telefone;
+          document.getElementById('farmaciaChavePix').value = farmacia.chavePix;
+      };
+
+      var btnExcluir = document.createElement('button');
+      btnExcluir.textContent = 'Excluir';
+      btnExcluir.classList.add('btn'); // Adiciona a classe 'btn'
+      btnExcluir.onclick = async function () {
+          await deletarFarmacia(farmacia.id);
+          await atualizarTabelaFarmacias();
+      };
+      
+      cellAcoes.appendChild(btnEditar);
+      cellAcoes.appendChild(btnExcluir);
+      
+    });
+  });
+}
 // Event listeners
 document.getElementById('btnSalvarMedicamento').addEventListener('click', function() {
   var id = parseInt(document.getElementById('medicamentoId').value) || undefined;
@@ -107,6 +158,23 @@ document.getElementById('btnSalvarMedicamento').addEventListener('click', functi
   }
 
   atualizarTabelaMedicamentos();
+});
+
+document.getElementById('btnSalvarFarmacia').addEventListener('click', function() {
+  var id = parseInt(document.getElementById('farmaciaId').value) || undefined;
+  var nome = document.getElementById('farmaciaNome').value;
+  var contato = document.getElementById('farmaciaContato').value;
+  var telefone = document.getElementById('farmaciaTelefone').value;
+  var chavePix = document.getElementById('farmaciaChavePix').value;
+
+  if (id) {
+    atualizarFarmacia(id, nome, contato, telefone, chavePix);
+  } else {
+    var farmacia = new Farmacia(nome, contato, telefone, chavePix);
+    db.farmacia.add(farmacia);
+  }
+
+  atualizarTabelaFarmacia();
 });
 
 // document.getElementById('btnDeletarMedicamento').addEventListener('click', function() {
