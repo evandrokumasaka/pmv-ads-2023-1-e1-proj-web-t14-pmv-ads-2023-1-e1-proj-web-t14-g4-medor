@@ -49,6 +49,11 @@
                     <h3>Medicamentos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
+                <a href="./farmacia.html">
+                    <span class="material-symbols-rounded">emoji_transportation</span>
+                    <h3>Farmácias</h3>
+                    <!-- <span class="message-count">1</span> -->
+                </a>              
                 <!-- <a href="#">
                     <span class="material-symbols-rounded">settings</span>
                     <h3>Configuração</h3>
@@ -64,7 +69,7 @@
             <h1>Médicos</h1>
             
             <div class="recent-orders">
-              <!-- <h2>Novo Medico</h2> -->
+              <!-- <h2>Novo Medicamento</h2> -->
               
               <!-- begin::form -->
               <!-- <form method="post" action"#"> -->
@@ -72,33 +77,32 @@
                  <!--nome-->
                  <div class="form-group">
                     <label for="medicoNome">Nome:</label>
-                    <input type="text" id="medico"><br>
+                    <input type="text" id="medicoNome" name="nome" required placeholder="(Obrigatório)"><br>
                  </div>
-                <!--Especialidade-->
+                <!--especialidade-->
                  <div class="form-group">
-                  <label for="medicoEspecialidade">Especialidade:</label>
-                  <input type="text" id="especialidade"><br>
+                    <label for="medicoEspecialidade">Especialidade:</label>
+                    <input type="text" id="medicoEspecialidade" name="Especialidade" placeholder=""><br>
                  </div>
-                 <!-- Telefone -->
+                 <!-- telefone -->
                  <div class="form-group">
                     <label for="medicoTelefone">Telefone:</label>
-                    <input type="number" id="telefone"><br>
+                    <input type="number" id="medicoTelefone" name="Telefone" placeholder=""><br>
                  </div>
-                 <!-- Endereço -->
+                 <!-- endereço -->
                  <div class="form-group">
                     <label for="medicoEndereço">Endereço:</label>
-                    <input type="text" id="endereço"><br>
+                    <input type="text" id="medicoEndereço" name="Endereço" placeholder=""><br>
                  </div>
-                 <!-- Valor -->
+                 <!-- valor -->
                  <div class="form-group">
                     <label for="medicoValor">Valor:</label>
-                    <input type="number" id="valor"><br>
+                    <input type="number" id="medicoValor" name="Valor" placeholder=""><br>
                  </div>
                  <!-- actions -->
                  <div>
-                    <!-- <input id="btnSalvarMedico" class ="btn" type="submit" value="Salvar"> -->
-                    <button onclick="medico.salvar()"id="btn1">Salvar</button>
-                    <button onclick="medico.cancelar()">Cancelar</button>
+                    <!-- <input id="btnSalvarMedicamento" class ="btn" type="submit" value="Salvar"> -->
+                    <button id="btnSalvarMedico" class ="btn">Salvar</button>
                  </div>
               <!-- </form>-->
               <!-- end::form --> 
@@ -107,18 +111,16 @@
                 <table id="tabelaMedicos">
                   <thead>
                       <tr>
-                          <th class="center">ID</th>
+                          <th>ID</th>
                           <th>Nome</th>
                           <th>Especialidade</th>
                           <th>Telefone</th>
                           <th>Endereço</th>
                           <th>Valor</th>
-                          <th class="center">Ações</th>
+                          <th>Ações</th>
                       </tr>
                   </thead>
-                  <tbody id="tbody">
-                    
-                  </tbody>
+                  <tbody></tbody>
                 </table>
               </div>
               
@@ -148,6 +150,36 @@
             <!-- END OF TOP -->
             <div class="recent-updates">
                 <h2>Notificações</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <span class="material-symbols-rounded">vaccines</span>
+                        </div>
+                        <div class="message">
+                            <p><b>Paracetamol</b> 1gr as 18:30</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <span class="material-symbols-rounded">vaccines</span>
+                        </div>
+                        <div class="message">
+                            <p><b>Paracetamol</b> 1gr as 18:30</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <span class="material-symbols-rounded">vaccines</span>
+                        </div>
+                        <div class="message">
+                            <p><b>Paracetamol</b> 1gr as 18:30</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <a href="#">Show All</a>
+                </div>
                 
             </div>
           
@@ -158,6 +190,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
   <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
-  <script src="script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
