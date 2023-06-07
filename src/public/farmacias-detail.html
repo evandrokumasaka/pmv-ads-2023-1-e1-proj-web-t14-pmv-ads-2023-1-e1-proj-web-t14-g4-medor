@@ -11,7 +11,70 @@
   <link rel="stylesheet" href="./css/styles.css">
   <title>MedOrganizer</title>
 </head>
+<style>
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel {
+      overflow-y: scroll;
+      height: 90%;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      scrollbar-width: thick;
+      scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .carousel::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    
+    .card-content {
+      flex-grow: 1;
+    }
+    
+    .card-buttons {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .card-button {
+      padding: 5px 10px;
+      background-color: #ccc;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 <body>
+  
   <div class="container">
         <aside>
             <div class="top">
@@ -34,7 +97,7 @@
                     <span class="material-symbols-rounded">add_business</span>
                     <h3>Clinica/Labor</h3>
                 </a>
-                <a href="./paciente.html" class="active">
+                <a href="./paciente.html">
                     <span class="material-symbols-rounded">Conditions</span>
                     <h3>Pacientes</h3>
                 </a>
@@ -52,11 +115,11 @@
                     <span class="material-symbols-rounded">emoji_transportation</span>
                     <h3>Farmácias</h3>
                     <span class="submenu">
-                        <a href="./farmacias-detail.html" class="submenu-item">
+                        <a href="./farmacias-detail.html" class="submenu-item active">
                             <h3>Visualizar Farmácias</h3>
                         </a>  
                     </span>
-                </a>              
+                </a>    
                 <!-- <a href="#">
                     <span class="material-symbols-rounded">settings</span>
                     <h3>Configuração</h3>
@@ -69,71 +132,47 @@
         </aside>
         <!---------------- END OF ASIDE ---------------->
         <main>
-            <h1>Pacientes</h1>
-            
-            <div class="recent-orders">
-              <h2>Novo Paciente</h2>
-              
-              <!--DADOS PESSOAIS-->
-              <fieldset id="dadosp">
-                <form method="post">
-                   <legend><b>Dados Pessoais</b></legend>
-                   <!--NOME-->
-                   <div class="form-group">
-                      <h2 for="nomeCompleto">Nome Completo:</h2>
-                      <input type="text" name="nomeCompleto"required placeholder="Example Example Example"><br>
-                   </div>
-                   <!--IDENTIDADE-->
-                   <div class="form-group">
-                      <h2 for="RG">Identidade: </h2>
-                      <input type="number"size = "8" maxlenght="8" placeholder="00000000"required><br>
-                   </div>
-                   <!--CPF-->
-                   <div class="form-group">
-                      <h2 for="CPF">CPF: </h2>
-                      <input type="number"name="CPF" size="11" maxlength="11" placeholder="000000000-00 "required><br>
-                   </div>
-                   <!--DATA DE NASCIMENTO-->
-                   <div class="form-group">
-                      <h2 for="dataNascimento">Data de nascimento:</h2>
-                      <input type="date" name="dataNascimento" placeholder="dd/mm/aaaa" required>
-                   </div>
-                   <!--GENERO-->
-                   <div class="form-group">
-                      <h2 for="genero">Gênero: </h2>
-                      <input type="radio" name="generoM" value="Masculino"> Masculino
-                      <input type="radio" name="generoF" value="Feminino"> Feminino
-                   </div>
-                   <!--EMAIL-->
-                   <div class="form-group">
-                      <h2 for="email">E-mail: </h2>
-                      <input type="email" placeholder="nnnn@example.com" required>
-                   </div>
-                   <!--ENDEREÇO-->
-                   <div class="form-group">
-                      <h2 for="endereço">Endereço:<br></h2>
-                      <label for="rua">Logradouro: </label>
-                      <input type="text" name="rua"><br>
-                      <label for="numero">Número: </label>
-                      <input type="number" name="numero"maxlength="5"><br>
-                      <label for="CEP">CEP: </label>
-                      <input type="number" name="CEP"minlength="8"maxlength="8" placeholder="000000-00"><br>
-                      <label for="Cidade">Cidade: </label>
-                      <input type="text" name="Cidade"><br>
-                      <label for="estado">Estado:</label>
-                      <input type="text" name="Estado"><br>
-                      <label for="bairro">Bairro: </label>
-                      <input type="text" name="Bairro">
-                   </div>
-                   <!--BUTTON-->
-                   <div class="form-group">
-                      <input name = botao1 class ="btn btn-primary" type="submit" value="Concluir" required>
-                      <input name="botao2" class="btn btn-secondary"type="reset" value="Cancelar" required>
-                   </div>
-                </form>
-             </fieldset>
-            </div>
-            
+          </head>
+          <h1>Farmácias</h1>
+
+          <div class="carousel-container">
+            <div class="carousel">
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 1">
+                  <div class="card-content">
+                    <h3>Farmácia Adelaide</h3>
+                    <p>Rua Carlos Guanabara, 48, Bairro Direita</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 2">
+                  <div class="card-content">
+                    <h3>Farmácia Rápida</h3>
+                    <p>Rua Valão, 17, Bairro Sul</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 3">
+                  <div class="card-content">
+                    <h3>Farmácia Carlinhos</h3>
+                    <p>Rua Quinze de Maio, 110, Bairro Progresso</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <!-- Add more cards as needed -->
+              </div>
+          </div>
         </main>
         <!---------------- END OF MAIN ---------------->
         <div class="right">
@@ -193,11 +232,5 @@
           
         </div>
     </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-  <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>
