@@ -11,6 +11,68 @@
   <link rel="stylesheet" href="./css/styles.css">
   <title>MedOrganizer</title>
 </head>
+<style>
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel {
+      overflow-y: scroll;
+      height: 90%;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      scrollbar-width: thick;
+      scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .carousel::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    
+    .card-content {
+      flex-grow: 1;
+    }
+    
+    .card-buttons {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .card-button {
+      padding: 5px 10px;
+      background-color: #ccc;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 <body>
   
   <div class="container">
@@ -27,7 +89,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="./#">
                     <span class="material-symbols-rounded">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
@@ -49,11 +111,15 @@
                     <h3>Medicamentos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
-                <a href="./farmacia.html">
+                <a href="./farmacia.html" class="active">
                     <span class="material-symbols-rounded">emoji_transportation</span>
                     <h3>Farmácias</h3>
-                    <!-- <span class="message-count">1</span> -->
-                </a>
+                    <span class="submenu">
+                        <a href="./farmacias-detail.html" class="submenu-item active">
+                            <h3>Visualizar Farmácias</h3>
+                        </a>  
+                    </span>
+                </a>    
                 <!-- <a href="#">
                     <span class="material-symbols-rounded">settings</span>
                     <h3>Configuração</h3>
@@ -66,14 +132,47 @@
         </aside>
         <!---------------- END OF ASIDE ---------------->
         <main>
-            <h1>Dashboard</h1>
-            
-            <div class="recent-orders">
-                <h2>Agenda</h2>
-              
-                <div id='calendar'></div>
-            </div>
+          </head>
+          <h1>Farmácias</h1>
 
+          <div class="carousel-container">
+            <div class="carousel">
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 1">
+                  <div class="card-content">
+                    <h3>Farmácia Adelaide</h3>
+                    <p>Rua Carlos Guanabara, 48, Bairro Direita</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 2">
+                  <div class="card-content">
+                    <h3>Farmácia Rápida</h3>
+                    <p>Rua Valão, 17, Bairro Sul</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-image" src="imgs/genericmap.jpg" alt="Farmácia 3">
+                  <div class="card-content">
+                    <h3>Farmácia Carlinhos</h3>
+                    <p>Rua Quinze de Maio, 110, Bairro Progresso</p>
+                  </div>
+                  <div class="card-buttons">
+                    <button class="card-button">Editar</button>
+                    <button class="card-button">Visualizar</button>
+                  </div>
+                </div>
+                <!-- Add more cards as needed -->
+              </div>
+          </div>
         </main>
         <!---------------- END OF MAIN ---------------->
         <div class="right">
@@ -133,22 +232,5 @@
           
         </div>
     </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-  <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
-  <script src="js/app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-        });
-        calendar.setOption('locale', 'pt');
-        calendar.render();
-      });
-  </script>
 </body>
 </html>

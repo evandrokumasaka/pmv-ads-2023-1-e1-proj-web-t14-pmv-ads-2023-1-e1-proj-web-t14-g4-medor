@@ -12,7 +12,6 @@
   <title>MedOrganizer</title>
 </head>
 <body>
-  
   <div class="container">
         <aside>
             <div class="top">
@@ -27,7 +26,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="./index.html">
                     <span class="material-symbols-rounded">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
@@ -44,16 +43,20 @@
                     <h3>Médicos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
-                <a href="./medicamento.html">
+                <a href="./medicamento.html" >
                     <span class="material-symbols-rounded">vaccines</span>
                     <h3>Medicamentos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
-                <a href="./farmacia.html">
+                <a href="./farmacia.html" class="active">
                     <span class="material-symbols-rounded">emoji_transportation</span>
                     <h3>Farmácias</h3>
-                    <!-- <span class="message-count">1</span> -->
-                </a>
+                    <span class="submenu">
+                        <a href="./farmacias-detail.html" class="submenu-item">
+                            <h3>Visualizar Farmácias</h3>
+                        </a>  
+                    </span>
+                </a>      
                 <!-- <a href="#">
                     <span class="material-symbols-rounded">settings</span>
                     <h3>Configuração</h3>
@@ -66,14 +69,60 @@
         </aside>
         <!---------------- END OF ASIDE ---------------->
         <main>
-            <h1>Dashboard</h1>
+            <h1>Farmácias</h1>
             
             <div class="recent-orders">
-                <h2>Agenda</h2>
+              <!-- <h2>Novo Medicamento</h2> -->
               
-                <div id='calendar'></div>
+              <!-- begin::form -->
+              <!-- <form method="post" action"#"> -->
+                 <input type="hidden" id="farmaciaId" name="id">
+                 <!--nome-->
+                 <div class="form-group">
+                    <label for="farmaciaNome">Nome:</label>
+                    <input type="text" id="farmaciaNome" name="nome" required placeholder="(Obrigatório)"><br>
+                 </div>
+                <!--fabricante-->
+                 <div class="form-group">
+                    <label for="farmaciaContato">Contato:</label>
+                    <input type="text" id="farmaciaContato" name="contato" placeholder=""><br>
+                 </div>
+                 <!-- telefone -->
+                 <div class="form-group">
+                    <label for="farmaciaTelefone">Telefone:</label>
+                    <input type="text" id="farmaciaTelefone" name="telefone" placeholder=""><br>
+                 </div>
+                 <!-- chave-pix -->
+                 <div class="form-group">
+                    <label for="farmaciaChavePix">Chave PIX:</label>
+                    <input type="text" id="farmaciaChavePix" name="chavePix" placeholder=""><br>
+                 </div>
+                 <!-- actions -->
+                 <div>
+                    <!-- <input id="btnSalvarfarmacia" class ="btn" type="submit" value="Salvar"> -->
+                    <button id="btnSalvarFarmacia" class ="btn">Salvar</button>
+                 </div>
+              <!-- </form>-->
+              <!-- end::form --> 
+              
+              <div style="margin-top: 10px;">
+                <table id="tabelaFarmacias">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Nome</th>
+                          <th>Contato</th>
+                          <th>Telefone</th>
+                          <th>Chave PIX</th>
+                          <th>Ações</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              
             </div>
-
+            
         </main>
         <!---------------- END OF MAIN ---------------->
         <div class="right">
@@ -138,17 +187,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
   <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
   <script src="js/app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-        });
-        calendar.setOption('locale', 'pt');
-        calendar.render();
-      });
+
   </script>
 </body>
 </html>

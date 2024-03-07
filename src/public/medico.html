@@ -27,7 +27,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="./index.html">
                     <span class="material-symbols-rounded">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
@@ -39,7 +39,7 @@
                     <span class="material-symbols-rounded">Conditions</span>
                     <h3>Pacientes</h3>
                 </a>
-                <a href="./medico.html">
+                <a href="./medico.html" class="active">
                     <span class="material-symbols-rounded">Stethoscope</span>
                     <h3>Médicos</h3>
                     <!-- <span class="message-count">1</span> -->
@@ -49,11 +49,10 @@
                     <h3>Medicamentos</h3>
                     <!-- <span class="message-count">1</span> -->
                 </a>
-                <a href="./farmacia.html">
+                <a href="./farmacia.html" class="active">
                     <span class="material-symbols-rounded">emoji_transportation</span>
                     <h3>Farmácias</h3>
-                    <!-- <span class="message-count">1</span> -->
-                </a>
+                </a>               
                 <!-- <a href="#">
                     <span class="material-symbols-rounded">settings</span>
                     <h3>Configuração</h3>
@@ -66,14 +65,66 @@
         </aside>
         <!---------------- END OF ASIDE ---------------->
         <main>
-            <h1>Dashboard</h1>
+            <h1>Médicos</h1>
             
             <div class="recent-orders">
-                <h2>Agenda</h2>
+              <!-- <h2>Novo Medicamento</h2> -->
               
-                <div id='calendar'></div>
+              <!-- begin::form -->
+              <!-- <form method="post" action"#"> -->
+                 <input type="hidden" id="medicoId" name="id">
+                 <!--nome-->
+                 <div class="form-group">
+                    <label for="medicoNome">Nome:</label>
+                    <input type="text" id="medicoNome" name="nome" required placeholder="(Obrigatório)"><br>
+                 </div>
+                <!--especialidade-->
+                 <div class="form-group">
+                    <label for="medicoEspecialidade">Especialidade:</label>
+                    <input type="text" id="medicoEspecialidade" name="Especialidade" placeholder=""><br>
+                 </div>
+                 <!-- telefone -->
+                 <div class="form-group">
+                    <label for="medicoTelefone">Telefone:</label>
+                    <input type="number" id="medicoTelefone" name="Telefone" placeholder=""><br>
+                 </div>
+                 <!-- endereço -->
+                 <div class="form-group">
+                    <label for="medicoEndereço">Endereço:</label>
+                    <input type="text" id="medicoEndereço" name="Endereço" placeholder=""><br>
+                 </div>
+                 <!-- valor -->
+                 <div class="form-group">
+                    <label for="medicoValor">Valor:</label>
+                    <input type="number" id="medicoValor" name="Valor" placeholder=""><br>
+                 </div>
+                 <!-- actions -->
+                 <div>
+                    <!-- <input id="btnSalvarMedicamento" class ="btn" type="submit" value="Salvar"> -->
+                    <button id="btnSalvarMedico" class ="btn">Salvar</button>
+                 </div>
+              <!-- </form>-->
+              <!-- end::form --> 
+              
+              <div style="margin-top: 10px;">
+                <table id="tabelaMedicos">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Nome</th>
+                          <th>Especialidade</th>
+                          <th>Telefone</th>
+                          <th>Endereço</th>
+                          <th>Valor</th>
+                          <th>Ações</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              
             </div>
-
+            
         </main>
         <!---------------- END OF MAIN ---------------->
         <div class="right">
@@ -138,17 +189,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
   <script src="https://unpkg.com/dexie@3.0.3/dist/dexie.min.js"></script>
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
   <script src="js/app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-        });
-        calendar.setOption('locale', 'pt');
-        calendar.render();
-      });
-  </script>
 </body>
 </html>

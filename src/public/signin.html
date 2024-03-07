@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - MedOrganizer</title>
+    <!-- <link rel="icon" type="image/svg+xml" href="./images/logo.svg"> -->
+    <!--Material CDN-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container-signin">
+        <input type="checkbox" id="toggle">
+        <div class="signin">
+            <div class="brand">
+                <div class="logo"><h1>MedOrganizer</h1></div>
+                <h2></h2>
+            </div>
+            <!-- <h1></h1> -->
+            <form action="./index.html">
+                <p style="color: var(--color-danger)">Não existe usuário com este username e senha!</p>
+                <input type="email" placeholder="E-mail">
+                <input type="password" placeholder="Senha">
+                <small>Esqueceu sua senha? <label for="toggle"> Redefinir</label></small>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="signup">
+            <h1>Redefinir Senha</h1>
+            <form>
+                <p>Não se preocupe! Basta digitar seu e-mail e enviaremos um código para redefinir sua senha!</p>
+                <input type="email" placeholder="E-mail">
+                <input type="submit" value="Enviar" >
+                <small>Retornar para ? <label for="toggle"> Login</label></small>
+            </form>
+        </div>
+        <!-- <div class="theme-toggler">
+            <span class="material-symbols-rounded active">light_mode</span>
+            <span class="material-symbols-rounded">dark_mode</span>
+        </div> -->
+    </div>
+    
+    <script>
+        document.querySelector(".theme-toggler").addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme-variables');
+
+            themeToggle.querySelector('span:nth-child(1)').classList.toggle('active');
+            themeToggle.querySelector('span:nth-child(2)').classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
